@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+    <h2>Update Book :</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID of Book</label>
+    <input readonly type="text" [(ngModel)]="currentBook.idBook"
+    name="idBook" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Name of Book</label>
+    <input type="text"[(ngModel)]= "currentBook.nomBook"
+    name="nomBook" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Price of Book</label>
+    <input type="number" [(ngModel)]= "currentBook.prixBook"
+    name="prixBook" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Creation date</label>
+    <input type="date" [ngModel]="currentBook.dateCreation
+    | date: 'yyyy-MM-dd'"(ngModelChange)=" currentBook.dateCreation= $event" name="dateCreation" class="form-control">
+    </div>
+    <div class="mt-2">
+    <button type="submit" (click)="updateBook()" class="btn btn-success">update</button>
+    </div>
+    </form>
+    </div>

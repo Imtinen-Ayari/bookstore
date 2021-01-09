@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped" >
+    <thead>
+    <tr>
+    <th>Our List Of Books</th>
+    </tr>
+    </thead>
+    <tr> 
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prix</th> 
+        <th>Date Création</th> </tr>
+    <tbody *ngFor="let book of books">
+    <tr >
+    <td>{{book.idBook}}</td>
+    <td>{{book.nomBook}}</td>
+
+    <td>{{book.prixBook}}</td>
+    <td>{{book.dateCreation | date:'dd/MM/yyyy'}}</td>
+    <td><a class="btn btn-success" [routerLink]="['/updateBook',book.idBook]">Update</a></td>
+    <td> <a class="btn btn-danger" (click)="supprimerBook(book)">Delete</a>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
